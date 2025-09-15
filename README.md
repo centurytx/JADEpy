@@ -1,3 +1,3 @@
 # JADEpy
 
-A slim python package for accessing the JADE database.
+A slim python library for accessing the JADE database in python application or Jupyter notebooks.
