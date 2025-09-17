@@ -47,6 +47,7 @@ Which has this usage:
 Normally you'd bump the version and then tag it:
 
     scripts/bump_version.py patch
+    git commit -am "bumped version"
     scripts/bump_version.py tag
 
 Then you can create a release on GitHub using this tag.
