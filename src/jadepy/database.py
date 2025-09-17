@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from dotenv import load_dotenv
 from .utils import warning, debug
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 
 class Settings:
     DB_PASSWORD: str | None = None
@@ -81,7 +81,7 @@ class Client:
             return
         raise ValueError("Must specify either db_name or db_url, or set POSTGRES_URL or DB_NAME in environment.")
 
-    def query_to_df(self, sql_query: str, params: tuple = ()) -> pd.DataFrame:
+    def query_to_df(self, sql_query: str, params: tuple|dict = ()) -> pd.DataFrame:
         """
         Execute an SQL query and return results as a Pandas DataFrame.
         
@@ -89,9 +89,6 @@ class Client:
         :param params: Optional tuple of parameters for parameterized queries.
         :return: Pandas DataFrame with query results.
         """
-        return pd.read_sql_query(sql_query, self.engine, params=params)
+        return pd.read_sql_query(text(sql_query), self.engine, params=params)
 
-# Example usage (for testing, not in production code)
-# client = PostgresQueryClient()
-# df = client.query_to_df("SELECT * FROM your_table WHERE id = %s", (1,))
-# print(df)
+# END

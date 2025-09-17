@@ -1,6 +1,6 @@
 [project]
 name = "jadepy"
-version = "0.2.2"
+version = "0.2.3"
 description = "Slim python package for accessing the JADE database"
 readme = "README.md"
 authors = [
