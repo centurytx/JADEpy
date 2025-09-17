@@ -6,7 +6,7 @@ readme = "README.md"
 authors = [
     { name = "Kevin Bullaughey", email = "kevin.bullaughey@centurytx.com" }
 ]
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
     "dotenv>=0.9.9",
     "pandas>=2.3.2",
