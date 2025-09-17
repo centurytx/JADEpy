@@ -48,6 +48,5 @@ Normally you'd bump the version and then tag it:
 
     scripts/bump_version.py patch
     scripts/bump_version.py tag
-    git push
 
 Then you can create a release on GitHub using this tag.

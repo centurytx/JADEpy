@@ -50,7 +50,7 @@ class Client:
             load_env()
             settings.loaded_env = True
         self.infer_db_url(db_name, db_url)
-        debug(f"Connecting to database with URL: {self.db_url}")
+        debug(f"Connected to database")
         self.engine = create_engine(self.db_url)
 
     def infer_db_url(self, db_name, db_url) -> None:
