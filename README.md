@@ -10,6 +10,12 @@ A basic query can be executed like this:
     client = jadepy.Client(db_name = "production_DB_v2")
     df = client.query_to_df('SELECT * FROM diff_differentiated_cell_bank LIMIT 10')
 
+You can used named arguments in the SQL query as follows:
+
+    query = "SELECT dbk_id, name, day_of_differentiation FROM diff_differentiated_cell_bank WHERE dbk_id IN :ids"
+    dbk = jadeClient.query_to_df(query, params={"ids": tuple(samples)})
+    dbk
+
 ## Setup
 
 This package uses `uv` to manage dependencies and you can install it locally from the repo as follows:
